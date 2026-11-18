@@ -154,25 +154,31 @@
     <!-- Barra de Filtros e Busca -->
     <div class="bg-white rounded-2xl p-4 sm:p-5 border border-blue-100 shadow-xs mb-8 space-y-4">
       
-      <!-- Linha 1: Categorias -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs font-semibold">
-        <button data-category="todos" class="filter-btn-category active-cat whitespace-nowrap px-4 py-2 rounded-xl bg-[#2B4C7E] text-white shadow-xs transition-all">
-          ⛵ Todos os Presentes
+      <!-- Linha 1: Categorias (Compacto e Responsivo sem scrollbar) -->
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-semibold">
+        <button data-category="todos" class="filter-btn-category active-cat px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-[#2B4C7E] text-white shadow-xs transition-all flex items-center gap-1.5">
+          <span>⛵</span>
+          <span>Todos</span>
         </button>
-        <button data-category="higiene" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
-          🛁 Higiene & Cuidados
+        <button data-category="higiene" class="filter-btn-category px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all flex items-center gap-1.5">
+          <span>🛁</span>
+          <span>Higiene</span>
         </button>
-        <button data-category="fraldas" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
-          👶 Fraldas & Lenços
+        <button data-category="fraldas" class="filter-btn-category px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all flex items-center gap-1.5">
+          <span>👶</span>
+          <span>Fraldas</span>
         </button>
-        <button data-category="quarto" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
-          🛏️ Quarto & Enxoval
+        <button data-category="quarto" class="filter-btn-category px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all flex items-center gap-1.5">
+          <span>🛏️</span>
+          <span>Quarto</span>
         </button>
-        <button data-category="alimentacao" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
-          🍼 Alimentação & Passeio
+        <button data-category="alimentacao" class="filter-btn-category px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all flex items-center gap-1.5">
+          <span>🍼</span>
+          <span>Alimentação</span>
         </button>
-        <button data-category="roupinhas" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
-          👕 Roupas & Acessórios
+        <button data-category="roupinhas" class="filter-btn-category px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all flex items-center gap-1.5">
+          <span>👕</span>
+          <span>Roupas</span>
         </button>
       </div>
 
