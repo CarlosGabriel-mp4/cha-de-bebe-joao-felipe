@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chá de Bebê do João Felipe ⚓ Pelos Papais Victoria & Felipe</title>
+  <meta name="description" content="Lista de presentes oficial do Chá de Bebê do João Felipe. Escolha um item com carinho para os papais Victoria e Felipe!">
+  
+  <!-- Favicon / Ícone Náutico -->
+  <link rel="icon" type="image/jpeg" href="assets/logo-joao-felipe.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nautical: {
+              dark: '#1D3557',
+              primary: '#2B4C7E',
+              medium: '#457B9D',
+              light: '#8EAECF',
+              sky: '#EBF3FA',
+              sand: '#FAF7F2',
+              gold: '#E5B869'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Playfair Display + Cinzel + Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8FAFD] text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ========================================== -->
+  <!-- BARRA DE TOPO NÁUTICA (CONVIDADO & STATUS) -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-blue-100/80 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Logo Compacta & Título -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#8BAAC9] shadow-xs group-hover:scale-105 transition-transform">
+          <img src="assets/logo-joao-felipe.jpg" alt="JF Logo" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <span class="font-serif-title font-bold text-base sm:text-lg text-[#1D3557] tracking-tight block leading-tight">
+            João Felipe
+          </span>
+          <span class="text-[11px] text-[#457B9D] font-medium block">
+            Victoria & Felipe
+          </span>
+        </div>
+      </a>
+
+      <!-- Área Dinâmica de Identificação do Convidado -->
+      <div id="guest-badge-container">
+        <!-- Injetado dinamicamente via app.js -->
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO PRINCIPAL (IDENTIDADE VISUAL AQUARELA) -->
+  <!-- ========================================== -->
+  <section class="relative bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#F8FAFD] pt-12 pb-20 px-4 sm:px-6 overflow-hidden text-center">
+    
+    <!-- Elementos Decorativos de Aquarela (Nuvens e Gaivotas) -->
+    <div class="absolute top-6 left-8 text-blue-200 text-4xl select-none animate-seagull opacity-70">
+      🕊️
+    </div>
+    <div class="absolute top-12 right-12 text-blue-200 text-3xl select-none animate-float opacity-70" style="animation-delay: 1.5s;">
+      ☁️
+    </div>
+    <div class="absolute bottom-14 left-1/4 text-amber-200 text-2xl select-none opacity-60">
+      ☀️
+    </div>
+
+    <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center">
+      
+      <!-- Medalhão Central com a Logo Oficial Náutica -->
+      <div class="relative mb-6">
+        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-white shadow-xl shadow-blue-900/10 logo-frame animate-float">
+          <img 
+            src="assets/logo-joao-felipe.jpg" 
+            alt="Logo Oficial Chá de Bebê João Felipe" 
+            class="w-full h-full object-cover rounded-full"
+          >
+        </div>
+        <span class="absolute -bottom-2 bg-[#2B4C7E] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
+          Chá de Bebê
+        </span>
+      </div>
+
+      <!-- Títulos Principais -->
+      <h1 class="font-serif-title text-3xl sm:text-5xl font-bold text-[#1D3557] mb-2 tracking-tight">
+        Chá de Bebê do João Felipe
+      </h1>
+      
+      <p class="text-base sm:text-lg text-[#457B9D] font-semibold mb-3 flex items-center gap-2">
+        <span>⛵</span>
+        <span>À espera do nosso pequeno marinheiro • Victoria & Felipe</span>
+        <span>⚓</span>
+      </p>
+
+      <p class="text-sm text-slate-600 max-w-xl leading-relaxed mb-6">
+        Queridos amigos e família! Criamos esta lista com muito amor para compartilhar este momento especial com vocês. Escolha um item que gostaria de presentear para evitar repetições!
+      </p>
+
+      <!-- Cartão de Progresso dos Presentes -->
+      <div class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-blue-100 shadow-sm">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-700 mb-2">
+          <span class="flex items-center gap-1.5 text-[#2B4C7E]">
+            <span>🎁</span>
+            <span>Presentes Escolhidos</span>
+          </span>
+          <span id="stat-percentage" class="text-[#457B9D]">0%</span>
+        </div>
+
+        <!-- Barra de Progresso Náutica -->
+        <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
+          <div 
+            id="stat-progress-bar" 
+            class="h-full bg-gradient-to-r from-[#8EAECF] to-[#2B4C7E] rounded-full transition-all duration-700" 
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <div class="flex items-center justify-between mt-3 text-[11px] text-slate-500 font-semibold border-t border-slate-100 pt-2.5">
+          <span>Total: <strong id="stat-total" class="text-slate-800">0</strong> itens</span>
+          <span class="text-emerald-700">Disponíveis: <strong id="stat-available">0</strong></span>
+          <span class="text-[#457B9D]">Já Escolhidos: <strong id="stat-reserved">0</strong></span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SEÇÃO PRINCIPAL DE PRESENTES E FILTROS -->
+  <!-- ========================================== -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
+    
+    <!-- Barra de Filtros e Busca -->
+    <div class="bg-white rounded-2xl p-4 sm:p-5 border border-blue-100 shadow-xs mb-8 space-y-4">
+      
+      <!-- Linha 1: Categorias -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs font-semibold">
+        <button data-category="todos" class="filter-btn-category active-cat whitespace-nowrap px-4 py-2 rounded-xl bg-[#2B4C7E] text-white shadow-xs transition-all">
+          ⛵ Todos os Presentes
+        </button>
+        <button data-category="higiene" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
+          🛁 Higiene & Cuidados
+        </button>
+        <button data-category="fraldas" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
+          👶 Fraldas & Lenços
+        </button>
+        <button data-category="quarto" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
+          🛏️ Quarto & Enxoval
+        </button>
+        <button data-category="alimentacao" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
+          🍼 Alimentação & Passeio
+        </button>
+        <button data-category="roupinhas" class="filter-btn-category whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 transition-all">
+          👕 Roupas & Acessórios
+        </button>
+      </div>
+
+      <!-- Linha 2: Busca por Nome e Filtro de Disponibilidade -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-slate-100">
+        
+        <!-- Campo de Busca -->
+        <div class="relative w-full sm:w-80">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Buscar presente (ex: fralda, banheira)..."
+            class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#2B4C7E] focus:border-transparent bg-slate-50/50"
+          >
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+
+        <!-- Filtro por Status -->
+        <div class="flex items-center gap-1.5 self-start sm:self-auto text-xs font-semibold">
+          <span class="text-slate-400 text-[11px] mr-1 hidden sm:inline">Exibir:</span>
+          <button data-status="todos" class="filter-btn-status active-status px-3 py-1.5 rounded-lg bg-[#457B9D] text-white transition-all">
+            Todos
+          </button>
+          <button data-status="disponivel" class="filter-btn-status px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+            Disponíveis
+          </button>
+          <button data-status="reservado" class="filter-btn-status px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+            Já Escolhidos
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Grid de Presentes -->
+    <div id="gifts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards renderizados dinamicamente pelo app.js -->
+    </div>
+
+    <!-- Estado Vazio (quando não há resultados na busca) -->
+    <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 p-8 my-6">
+      <div class="w-16 h-16 mx-auto mb-3 text-slate-300 text-4xl">🔍</div>
+      <h3 class="text-base font-bold text-slate-700 mb-1">Nenhum presente encontrado</h3>
+      <p class="text-xs text-slate-500 max-w-sm mx-auto">Tente buscar por outro termo ou mude os filtros selecionados acima.</p>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MURAL DE RECADINHOS PARA VICTORIA & FELIPE -->
+  <!-- ========================================== -->
+  <section id="guestbook-section" class="max-w-6xl mx-auto px-4 sm:px-6 py-8 w-full hidden">
+    <div class="bg-gradient-to-r from-blue-50/60 via-white to-amber-50/40 rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-xs">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">💌</span>
+        <div>
+          <h2 class="font-serif-title text-xl font-bold text-[#1D3557]">Mural de Amor para o João Felipe</h2>
+          <p class="text-xs text-[#457B9D]">Mensagens carinhosas deixadas pelos convidados</p>
+        </div>
+      </div>
+      <div id="guestbook-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Injetado dinamicamente via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SEÇÃO DE PIX / CONTRIBUIÇÃO À DISTÂNCIA -->
+  <!-- ========================================== -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-6 w-full">
+    <div class="bg-white rounded-2xl p-6 border border-amber-200/70 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl flex-shrink-0">
+          💛
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800 text-sm">Prefere presentear pelo Pix ou mora longe?</h3>
+          <p class="text-xs text-slate-500">Você também pode enviar um valor de coração para ajudar nos preparativos do João Felipe!</p>
+        </div>
+      </div>
+      <button onclick="copyPixKey()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-sm transition-all whitespace-nowrap flex items-center justify-center gap-2 active:scale-95">
+        <span>Copiar Chave Pix</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- RODAPÉ NÁUTICO -->
+  <!-- ========================================== -->
+  <footer class="mt-auto bg-[#1D3557] text-white py-10 px-4 sm:px-6 border-t border-blue-900">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white/30">
+          <img src="assets/logo-joao-felipe.jpg" alt="JF" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <p class="font-serif-title font-bold text-sm tracking-wide">Chá de Bebê do João Felipe</p>
+          <p class="text-[11px] text-blue-200">Com muito amor, Victoria & Felipe</p>
+        </div>
+      </div>
+
+      <!-- Link Discreto para Área dos Papais -->
+      <div class="flex items-center gap-4 text-xs text-blue-200">
+        <button onclick="openAdminAuth()" class="hover:text-white underline font-medium flex items-center gap-1.5 transition-colors">
+          <span>⚓</span>
+          <span>Área dos Papais (Victoria & Felipe)</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- MODAIS DO SISTEMA -->
+  <!-- ========================================== -->
+
+  <!-- 1. Modal de Boas-Vindas / Identificação do Convidado -->
+  <div id="guest-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 modal-backdrop-blur hidden">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-blue-100 text-center relative transition-all">
+      
+      <div class="w-16 h-16 rounded-full mx-auto mb-3 p-1 bg-blue-50 border-2 border-[#8BAAC9] overflow-hidden">
+        <img src="assets/logo-joao-felipe.jpg" alt="JF" class="w-full h-full object-cover rounded-full">
+      </div>
+
+      <h3 id="guest-modal-title" class="font-serif-title text-xl font-bold text-[#1D3557] mb-1">
+        Quem está presenteando?
+      </h3>
+      <p class="text-xs text-slate-500 mb-5 leading-relaxed">
+        Digite seu nome e sobrenome para os papais saberem quem deu este carinho para o João Felipe!
+      </p>
+
+      <form onsubmit="saveGuestIdentity(event)" class="space-y-3 text-left">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Seu Nome e Sobrenome *</label>
+          <input 
+            type="text" 
+            id="guest-name-input" 
+            placeholder="Ex: Mariana Silva / Tio Carlos" 
+            required 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-[#2B4C7E] focus:outline-none"
+          >
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp (Opcional)</label>
+          <input 
+            type="tel" 
+            id="guest-phone-input" 
+            placeholder="(11) 99999-9999" 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-[#2B4C7E] focus:outline-none"
+          >
+        </div>
+
+        <div class="pt-2 flex items-center gap-2">
+          <button type="button" onclick="closeGuestModal()" class="w-1/2 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50 transition-colors">
+            Cancelar
+          </button>
+          <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-[#2B4C7E] hover:bg-[#1D3557] text-white font-bold text-xs shadow-md transition-all">
+            Salvar e Continuar
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 2. Modal de Confirmação de Escolha de Presente -->
+  <div id="confirm-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 modal-backdrop-blur hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-blue-100 relative">
+      
+      <div class="text-center mb-4">
+        <span class="text-3xl mb-1 inline-block">🎁</span>
+        <h3 class="font-serif-title text-xl font-bold text-[#1D3557]">Confirmar Presente</h3>
+        <p class="text-xs text-slate-500">Ao confirmar, este item será marcado como indisponível para outros convidados.</p>
+      </div>
+
+      <!-- Prévia do Presente -->
+      <div class="flex items-center gap-3 p-3 bg-blue-50/60 rounded-2xl border border-blue-100 mb-4">
+        <img id="confirm-gift-img" src="" alt="Produto" class="w-14 h-14 object-cover rounded-xl border border-white">
+        <div>
+          <h4 id="confirm-gift-title" class="font-bold text-xs text-slate-800 line-clamp-2">Título do Presente</h4>
+          <p class="text-[11px] text-[#457B9D]">Presenteador: <strong id="confirm-guest-name">Seu Nome</strong></p>
+        </div>
+      </div>
+
+      <!-- Recadinho Opcional -->
+      <div class="mb-5 text-left">
+        <label class="block text-xs font-bold text-slate-700 mb-1">
+          Deixar um recadinho especial para a família? 💌 <span class="text-slate-400 font-normal">(opcional)</span>
+        </label>
+        <textarea 
+          id="confirm-note-input" 
+          rows="3" 
+          placeholder="Escreva uma mensagem de carinho para a Victoria, o Felipe e o João Felipe..." 
+          class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-[#2B4C7E] focus:outline-none resize-none"
+        ></textarea>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="closeConfirmModal()" class="w-1/2 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs hover:bg-slate-50 transition-colors">
+          Voltar
+        </button>
+        <button onclick="executeReservation()" class="w-1/2 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md shadow-emerald-900/10 transition-all flex items-center justify-center gap-1.5 active:scale-95">
+          <span>✓ Confirmar Escolha</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Modal de Sucesso / Celebração -->
+  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 modal-backdrop-blur hidden">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-emerald-100 text-center">
+      
+      <div class="w-16 h-16 rounded-full mx-auto mb-3 bg-emerald-100 text-emerald-600 text-3xl flex items-center justify-center shadow-inner">
+        🎉
+      </div>
+
+      <h3 class="font-serif-title text-xl font-bold text-slate-800 mb-2">Muito Obrigado!</h3>
+      <p id="success-message-text" class="text-xs text-slate-600 leading-relaxed mb-6">
+        Seu presente foi reservado com sucesso!
+      </p>
+
+      <button onclick="closeSuccessModal()" class="w-full py-2.5 rounded-xl bg-[#2B4C7E] hover:bg-[#1D3557] text-white font-bold text-xs shadow-md transition-all">
+        Ver Lista Atualizada
+      </button>
+
+    </div>
+  </div>
+
+  <!-- 4. Modal de Autenticação dos Papais -->
+  <div id="admin-auth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 modal-backdrop-blur hidden">
+    <div class="bg-white rounded-3xl max-w-xs w-full p-6 shadow-2xl border border-blue-100 text-center">
+      
+      <div class="text-3xl mb-2">⚓</div>
+      <h3 class="font-serif-title text-lg font-bold text-[#1D3557] mb-1">Área dos Papais</h3>
+      <p class="text-xs text-slate-500 mb-4">Digite a senha para acessar a gestão da lista</p>
+
+      <form onsubmit="verifyAdminPassword(event)" class="space-y-3">
+        <input 
+          type="password" 
+          id="admin-password-input" 
+          placeholder="Digite a senha..." 
+          required 
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-center focus:ring-2 focus:ring-[#2B4C7E] focus:outline-none"
+        >
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="closeAdminAuth()" class="w-1/2 py-2 rounded-xl border border-slate-200 text-slate-600 font-bold text-xs">
+            Cancelar
+          </button>
+          <button type="submit" class="w-1/2 py-2 rounded-xl bg-[#2B4C7E] text-white font-bold text-xs">
+            Entrar
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 5. Modal Painel de Gestão Completo dos Papais (Dashboard) -->
+  <div id="admin-dashboard-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 modal-backdrop-blur hidden">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-blue-100 overflow-hidden">
+      
+      <!-- Topo do Painel -->
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div>
+          <h3 class="font-serif-title text-lg font-bold text-[#1D3557]">Painel da Victoria & Felipe</h3>
+          <p class="text-xs text-slate-500">Gestão dos presentes e recados do João Felipe</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="exportAdminCsv()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-xs">
+            <span>📥 Baixar Excel/CSV</span>
+          </button>
+          <button onclick="closeAdminDashboard()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm flex items-center justify-center">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabela com Scroll -->
+      <div class="p-5 overflow-y-auto flex-1">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-[11px] font-bold text-slate-600 uppercase border-b border-slate-200">
+              <th class="p-3">#</th>
+              <th class="p-3">Presente</th>
+              <th class="p-3">Categoria</th>
+              <th class="p-3">Status</th>
+              <th class="p-3">Escolhido Por</th>
+              <th class="p-3">Telefone</th>
+              <th class="p-3">Recado</th>
+              <th class="p-3">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body">
+            <!-- Linhas inseridas pelo app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Rodapé do Painel -->
+      <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+        <button onclick="resetAllData()" class="text-xs text-rose-600 hover:text-rose-800 font-bold">
+          Restaurar lista original
+        </button>
+        <button onclick="closeAdminDashboard()" class="px-4 py-2 rounded-xl bg-[#2B4C7E] text-white font-bold text-xs">
+          Fechar Painel
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="items-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
