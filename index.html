@@ -358,10 +358,12 @@
 
       <!-- Prévia do Presente -->
       <div class="flex items-center gap-3 p-3 bg-blue-50/60 rounded-2xl border border-blue-100 mb-4">
-        <img id="confirm-gift-img" src="" alt="Produto" class="w-14 h-14 object-cover rounded-xl border border-white">
-        <div>
-          <h4 id="confirm-gift-title" class="font-bold text-xs text-slate-800 line-clamp-2">Título do Presente</h4>
-          <p class="text-[11px] text-[#457B9D]">Presenteador: <strong id="confirm-guest-name">Seu Nome</strong></p>
+        <div id="confirm-gift-icon" class="w-14 h-14 bg-white rounded-xl border border-blue-100 flex items-center justify-center flex-shrink-0 shadow-xs">
+          <!-- Ícone injetado pelo app.js -->
+        </div>
+        <div class="flex-1 min-w-0">
+          <h4 id="confirm-gift-title" class="font-bold text-xs sm:text-sm text-slate-800 line-clamp-2">Título do Presente</h4>
+          <p class="text-[11px] text-[#457B9D] truncate">Presenteador: <strong id="confirm-guest-name">Seu Nome</strong></p>
         </div>
       </div>
 
@@ -495,6 +497,7 @@
 
   <!-- Scripts -->
   <script src="config.js"></script>
+  <script src="icons.js"></script>
   <script src="items-data.js"></script>
   <script src="app.js"></script>
 </body>

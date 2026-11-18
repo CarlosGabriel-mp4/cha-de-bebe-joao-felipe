@@ -163,24 +163,19 @@ function renderGiftsList() {
         </div>
 
         <div>
-          <!-- Imagem do Produto -->
-          <div class="relative w-full h-48 bg-slate-50 overflow-hidden">
-            <img 
-              src="${gift.imagem_url}" 
-              alt="${escapeHtml(gift.titulo)}" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${isReserved ? 'grayscale-[40%]' : ''}"
-              onerror="this.src='https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=600&q=80'"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          <!-- Topo do Card com Ícone Náutico Padronizado -->
+          <div class="relative w-full h-36 sm:h-40 bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-white flex items-center justify-center p-4 border-b border-blue-50/80">
+            <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-white shadow-sm border-2 border-[#8BAAC9]/40 flex items-center justify-center text-[#2B4C7E] group-hover:scale-105 group-hover:border-[#2B4C7E]/60 transition-all duration-300 ${isReserved ? 'opacity-60 grayscale-[30%]' : ''}">
+              ${typeof getGiftIconSvg === 'function' ? getGiftIconSvg(gift.id) : ''}
+            </div>
           </div>
 
           <!-- Conteúdo -->
-          <div class="p-5">
+          <div class="p-4 sm:p-5">
             <span class="text-[11px] font-bold uppercase tracking-wider text-[#457B9D] block mb-1">
               ${formatCategory(gift.categoria)}
             </span>
-            <h3 class="font-bold text-slate-800 text-base leading-snug mb-1.5">
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base leading-snug mb-1.5">
               ${escapeHtml(gift.titulo)}
             </h3>
             <p class="text-xs text-slate-500 line-clamp-2 mb-3 leading-relaxed">
@@ -331,12 +326,14 @@ function saveGuestIdentity(e) {
 function openConfirmModal(gift) {
   const modal = document.getElementById("confirm-modal");
   const titleEl = document.getElementById("confirm-gift-title");
-  const imgEl = document.getElementById("confirm-gift-img");
+  const iconEl = document.getElementById("confirm-gift-icon");
   const guestEl = document.getElementById("confirm-guest-name");
   const noteInput = document.getElementById("confirm-note-input");
 
   if (titleEl) titleEl.textContent = gift.titulo;
-  if (imgEl) imgEl.src = gift.imagem_url;
+  if (iconEl && typeof getGiftIconSvg === "function") {
+    iconEl.innerHTML = getGiftIconSvg(gift.id);
+  }
   if (guestEl) guestEl.textContent = state.guestName;
   if (noteInput) noteInput.value = "";
 

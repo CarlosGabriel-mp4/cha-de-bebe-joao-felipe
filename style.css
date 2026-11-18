@@ -100,14 +100,44 @@ body {
 
 /* Scrollbar Bonita */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Otimizações de UX e UI para Mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Feedback tátil nos botões no Mobile */
+button:active, a:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 640px) {
+  /* Evita overflow indesejado e ajusta modais para telas pequenas */
+  .modal-dialog {
+    max-height: 88vh;
+  }
+}
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
